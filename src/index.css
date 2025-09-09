@@ -2,41 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* AI Photo Platform Design System - Vibrant & Energetic Theme
+All colors MUST be HSL. Bold gradients and playful aesthetics.
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors */
+    --background: 250 100% 98%;
+    --foreground: 240 15% 12%;
 
+    /* Vibrant Gradient Colors */
+    --purple: 270 85% 65%;
+    --pink: 320 85% 70%;
+    --orange: 25 95% 65%;
+    --blue: 220 85% 65%;
+    --green: 150 75% 55%;
+
+    /* Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 15% 12%;
+    --card-hover: 250 100% 97%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 15% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand */
+    --primary: 280 85% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 280 85% 75%;
+    --primary-dark: 280 85% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary */
+    --secondary: 320 85% 70%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 320 85% 80%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent Colors */
+    --accent: 25 95% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 25 95% 75%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Neutral Tones */
+    --muted: 240 10% 95%;
+    --muted-foreground: 240 10% 45%;
+    --muted-dark: 240 10% 85%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Semantic Colors */
+    --success: 150 75% 55%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 95% 65%;
+    --warning-foreground: 240 15% 12%;
+    --destructive: 0 85% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Inputs */
+    --border: 240 20% 90%;
+    --input: 240 20% 95%;
+    --ring: 280 85% 65%;
 
-    --radius: 0.5rem;
+    /* Design System */
+    --radius: 1rem;
+    --radius-sm: 0.75rem;
+    --radius-lg: 1.5rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(270 85% 65%), hsl(320 85% 70%), hsl(25 95% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 85% 65%), hsl(280 85% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(320 85% 70%), hsl(25 95% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(270 85% 65%) 0%, hsl(320 85% 70%) 50%, hsl(25 95% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(250 100% 98%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(280 85% 65% / 0.15);
+    --shadow-md: 0 4px 20px hsl(280 85% 65% / 0.2);
+    --shadow-lg: 0 8px 40px hsl(280 85% 65% / 0.25);
+    --shadow-glow: 0 0 40px hsl(280 85% 65% / 0.3);
+    --shadow-colorful: 0 8px 32px hsl(320 85% 70% / 0.3);
+
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +151,56 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+  }
+}
+
+@layer utilities {
+  /* Gradient Utilities */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Shadow Utilities */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-colorful {
+    box-shadow: var(--shadow-colorful);
+  }
+
+  /* Animation Utilities */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-smooth hover:scale-105 hover:shadow-colorful;
+  }
+  
+  .hover-glow {
+    @apply transition-smooth hover:shadow-glow;
   }
 }
